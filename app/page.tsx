@@ -4,6 +4,7 @@ import { Button } from "@/components/luna/Button";
 import { Card } from "@/components/luna/Card";
 import { DecorativeCrescent } from "@/components/luna/DecorativeCrescent";
 import { DecorativeMoon } from "@/components/luna/DecorativeMoon";
+import { FloatingWhatsAppButton } from "@/components/luna/FloatingWhatsAppButton";
 import { LeadForm } from "@/components/luna/LeadForm";
 import { Section } from "@/components/luna/Section";
 import { SectionHeading } from "@/components/luna/SectionHeading";
@@ -25,6 +26,9 @@ import {
 const checkoutUrl =
   process.env.NEXT_PUBLIC_LUNA_CHECKOUT_URL || "https://pay.hotmart.com/S106748079U";
 const instagramUrl = "https://www.instagram.com/karolina.totena";
+const whatsappUrl =
+  process.env.NEXT_PUBLIC_LUNA_WHATSAPP_URL ||
+  "https://wa.me/34641406947?text=Hola%20Karolina%2C%20quiero%20informaci%C3%B3n%20sobre%20el%20programa%20LUNA%20%F0%9F%8C%99";
 
 export default function Home() {
   return (
@@ -51,6 +55,7 @@ export default function Home() {
         <PoliciesSection />
       </main>
       <Footer />
+      <FloatingWhatsAppButton href={whatsappUrl} />
       <MobileStickyCta />
     </div>
   );
@@ -425,27 +430,27 @@ function FitSection() {
 
 function PricingSection() {
   return (
-    <Section id="inversion" className="bg-soft-cream/75">
+    <Section id="inscripcion" className="bg-soft-cream/75">
       <div className="mx-auto max-w-4xl">
-        <SectionHeading align="center" title="Tu inversión" />
+        <SectionHeading align="center" title="Inscripción a la edición fundadora" />
         <Card className="mt-10 p-7 sm:p-10">
-          <div className="grid gap-8 lg:grid-cols-[.9fr_1.1fr] lg:items-center">
+          <div className="grid gap-8 lg:grid-cols-[.9fr_1.1fr] lg:items-start">
             <div>
               <p className="text-xs font-semibold uppercase tracking-[0.22em] text-taupe">
                 Edición Fundadora
               </p>
-              <p className="mt-4 font-serif text-7xl text-deep-brown sm:text-8xl">{pricing.price}</p>
-              <div className="mt-6 space-y-3 text-cacao/85">
-                {pricing.options.map((option) => <p key={option}>{option}</p>)}
-              </div>
+              <p className="mt-5 font-serif text-4xl leading-tight text-deep-brown sm:text-5xl">
+                Opciones de inscripción
+              </p>
+              <p className="mt-5 text-lg leading-8 text-cacao/85">{pricing.intro}</p>
             </div>
             <div className="space-y-4">
               {pricing.details.map((detail) => <CheckItem key={detail}>{detail}</CheckItem>)}
-              <div className="flex flex-col gap-3 pt-4 sm:flex-row">
-                <Button href={checkoutUrl}>Entrar a LUNA</Button>
-                <Button href={instagramUrl} variant="secondary">
-                  Escribirme por Instagram
-                </Button>
+              <div className="space-y-4 pt-4">
+                <Button href={checkoutUrl}>Ver opciones de inscripción</Button>
+                <p className="text-sm leading-6 text-cacao/70">
+                  El checkout te mostrará el valor final y las opciones de pago disponibles antes de confirmar tu compra.
+                </p>
               </div>
             </div>
           </div>
@@ -532,6 +537,14 @@ function Footer() {
         </div>
         <nav className="flex flex-wrap gap-4" aria-label="Legal">
           <a href={instagramUrl} className="underline-offset-4 hover:underline">Instagram</a>
+          <a
+            href={whatsappUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="underline-offset-4 hover:underline"
+          >
+            WhatsApp
+          </a>
           <a href="/terminos-y-condiciones" className="underline-offset-4 hover:underline">Términos y condiciones</a>
           <a href="#" className="underline-offset-4 hover:underline">Política de privacidad</a>
           <a href="#contacto" className="underline-offset-4 hover:underline">Contacto</a>
@@ -545,7 +558,7 @@ function MobileStickyCta() {
   return (
     <div className="fixed inset-x-0 bottom-0 z-50 border-t border-line bg-soft-cream/92 p-3 backdrop-blur-xl sm:hidden">
       <Button href={checkoutUrl} className="w-full">
-        Entrar a LUNA · 197 €
+        Entrar a LUNA
       </Button>
     </div>
   );
@@ -577,7 +590,7 @@ function BotanicalLine({ className = "" }: { className?: string }) {
       <path d="M80 244C82 190 80 126 80 18" stroke="currentColor" strokeWidth="1.4" />
       <path d="M80 174C50 156 37 133 35 106C60 112 75 135 80 174Z" stroke="currentColor" strokeWidth="1.4" />
       <path d="M81 128C112 112 124 90 122 63C98 70 84 94 81 128Z" stroke="currentColor" strokeWidth="1.4" />
-      <path d="M80 213C111 197 126 175 128 148C102 153 86 177 80 213Z" stroke="currentColor" strokeWidth="1.4" />
+      <path d="M80 213C111 196 126 175 128 148C102 153 86 177 80 213Z" stroke="currentColor" strokeWidth="1.4" />
       <path d="M80 86C56 73 45 55 45 33C65 38 77 58 80 86Z" stroke="currentColor" strokeWidth="1.4" />
     </svg>
   );

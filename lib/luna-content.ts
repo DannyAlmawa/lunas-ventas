@@ -2,7 +2,7 @@ export const navItems = [
   { label: "Método", href: "#metodo" },
   { label: "Qué incluye", href: "#incluye" },
   { label: "Programa", href: "#programa" },
-  { label: "Inversión", href: "#inversion" },
+  { label: "Inscripción", href: "#inscripcion" },
   { label: "FAQ", href: "#faq" },
 ];
 
@@ -173,18 +173,16 @@ export const notFitItems = [
 ];
 
 export const pricing = {
-  price: "197 €",
-  options: [
-    "Pago único: 197 €",
-    "2 pagos de 100 € — total 200 €",
-    "3 pagos de 70 € — total 210 €",
-  ],
+  intro:
+    "LUNA abre su edición fundadora con plazas limitadas para mantener un espacio cercano y cuidado.",
   details: [
     "Programa online de 12 semanas.",
     "Inicio: sábado 1 de agosto de 2026.",
     "Sesiones: sábados a las 11:00 a. m. España peninsular.",
     "Las sesiones quedan grabadas.",
     "Máximo 15 mujeres por edición.",
+    "Acceso al contenido de esta edición.",
+    "Comunidad privada y acompañamiento durante el programa.",
   ],
 };
 
@@ -225,7 +223,12 @@ export const faqs = [
   {
     question: "¿Puedo pagar en cuotas?",
     answer:
-      "Sí. Puedes pagar en dos cuotas de 100 € o tres cuotas de 70 €, según las condiciones de inscripción.",
+      "Las opciones de pago disponibles aparecerán directamente en el checkout antes de confirmar la compra.",
+  },
+  {
+    question: "¿Dónde puedo ver el valor del programa?",
+    answer:
+      "Al hacer clic en el botón de inscripción accederás al checkout oficial, donde podrás ver el valor final y las opciones de pago disponibles antes de confirmar tu compra.",
   },
 ];
 
